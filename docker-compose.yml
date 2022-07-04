@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+    db_boardgames:
+        image: postgres:13.6
+        environment:
+            POSTGRES_PASSWORD: "admin123"
+            POSTGRES_USER: "admin321"
+            POSTGRES_DB: "boardgames"
+        ports:
+            - "5432:5432"
+    boardgames_app:
+        image: boardgames_project
+        build: .
+        volumes:
+            - .:/code
+        ports:
+            - "8000:8000"
+        depends_on:
+            - db_boardgames
