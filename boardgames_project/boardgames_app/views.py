@@ -5,10 +5,4 @@ from django.http import HttpResponse
 
 
 def home(request):
-    # return HttpResponse("elo")
     return render(request, 'boardgames_app/home.html')
-
-
-def test_view(request):
-    return render(request, "boardgames_app/test_view.html")
-
