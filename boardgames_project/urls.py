@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', register_view.register, name='register'),
     path('', include('boardgames_project.boardgames_app.urls')),
+    path('', include("django.contrib.auth.urls")),
 ]
