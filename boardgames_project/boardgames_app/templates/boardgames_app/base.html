@@ -46,8 +46,7 @@
         {% if user.is_authenticated %}
             <a href="/">Home</a>
             <a href="/2">List of meetings</a>
-            <a href="/3">Add new meetings</a>
-            <a href="/4">My meetings</a>
+            <a href="/add_meeting">Add new meeting</a>
             <a href="/5">Settings</a>
             <a href="{% url 'logout' %}">Log Out</a>
         {% else %}
