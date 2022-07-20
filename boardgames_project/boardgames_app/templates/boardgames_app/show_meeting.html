@@ -1,0 +1,50 @@
+{% extends "boardgames_app/base.html" %}
+
+{% block title %}Create an Account {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>Meeting name</th>
+            <th>Game name</th>
+            <th>Meeting date</th>
+            <th>Meeting hour</th>
+            <th>Players ready</th>
+            <th>Playerd needed</th>
+            <th>City</th>
+            <th>Address</th>
+            <th>Zip Code</th>
+            {% if user.is_authenticated %}
+                <th></th>
+            {% endif %}
+        </tr>
+        <tr>
+            <td>{{ meeting.meeting_name }}</td>
+            <td>{{ meeting.game_name }}</td>
+            <td>{{ meeting.meeting_date }}</td>
+            <td>{{ meeting.meeting_hour }}</td>
+            <td>{{ meeting.current_amount_of_players }}</td>
+            <td>{{ meeting.wanted_amount_of_players }}</td>
+            <td>{{ meeting.city }}</td>
+            <td>{{ meeting.address }}</td>
+            <td>{{ meeting.zip_code }}</td>
+            {% if user.is_authenticated %}
+                {% if user_joined_meeting %}
+                <td>
+                    <form action="#" method="get">
+                        <input type="submit" class="btn btn-danger" value="Leave" name="leave_status">
+                    </form>
+                </td>
+                {% else %}
+                <td>
+                    <form action="#" method="get">
+                        <input type="submit" class="btn btn-success" value="Join" name="join_status">
+                    </form>
+                </td>
+                {% endif %}
+            {% endif %}
+        </tr>
+</table>
+
+{% endblock %}
