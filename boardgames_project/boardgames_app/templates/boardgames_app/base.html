@@ -45,12 +45,14 @@
     <div class="sidenav">
         {% if user.is_authenticated %}
             <a href="/">Home</a>
-            <a href="/2">List of meetings</a>
+            <a href="/meetings">Meetings</a>
             <a href="/add_meeting">Add new meeting</a>
+            <a href="/my_meetings">My meetings</a>
             <a href="/5">Settings</a>
             <a href="{% url 'logout' %}">Log Out</a>
         {% else %}
             <a href="/">Home</a>
+            <a href="/meetings">Meetings</a>
             <a href="/login">Login</a>
             <a href="/register">Register</a>
             <a href="/2">List of meetings</a>
