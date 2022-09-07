@@ -17,13 +17,8 @@ In order to run this app use **bash script** in root project directory:
 `./build.sh -b`
 ## To cleanup:
 `./build.sh -d`
-## To run tests:
-`./build.sh -t`
 
 Please use http://localhost:8000/ with your browser to see frontend.
-
-In order to use API please use http://localhost:8000/api/{path}
-
 
 
 **For Windows users it is recommended to use Git Bash.**
